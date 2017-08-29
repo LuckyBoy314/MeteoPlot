@@ -39,8 +39,9 @@ if __name__ == "__main__":
                   ]
         for f in fs:
             if os.path.exists(f):
+                f_cut_source = f[len(micaps_source_dir):]
                 out = ''.join(
-                    [temp_dir, f[f.find('\\') + 1:f.find('\\', f.find('\\') + 1)], '_', '%03d' % valid_h, '.asc'])
+                    [temp_dir, f_cut_source[0:f_cut_source.find('\\')], '_', '%03d' % valid_h, '.asc'])
                 if not os.path.exists(out):
                     d = Diamond4(f)
                     d.convert_to_EsriAscii(out)
