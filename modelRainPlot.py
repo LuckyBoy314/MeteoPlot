@@ -6,11 +6,12 @@ import arcpy
 
 if __name__ == "__main__":
 
-    start_time = '17082820'  # 起报时间
+    start_time = '17082908'  # 起报时间
     micaps_source_dir = 'Y:\\'
     temp_dir = 'D:/rain_model/%s/' % start_time
     product_dir = 'Z:/model_rain/'
-    mxd_path = os.path.abspath('..') + u'/data/多模式降水对比模板.mxd'
+    mxd_path = os.getcwd() + u'/data/多模式降水对比模板.mxd'
+    print mxd_path
     if not os.path.exists(temp_dir):
         os.makedirs(temp_dir)
 
